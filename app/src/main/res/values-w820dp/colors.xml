@@ -21,7 +21,7 @@
     <color name="green">#ff42a461</color>
     <color name="gray">#ffc1c1c1</color>
 
-
+    <color name="colorPrimary">#43a9f4</color>
     <!-- general text colors -->
     <!--<color name="text">#212121</color>-->
     <!--<color name="secondary">#727272</color>-->
