@@ -1,98 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gtr" >
+    package="com.gtr">
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!-- 获取机型信息权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <!-- 录音 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- baidu map -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Toolbar">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="21nhLWkx8ylQ6S9VSeln4hzZ" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
 
         </activity>
 
 
-    <!--  smssdk activity-->
-    <activity
-        android:name="cn.smssdk.SMSSDKUIShell"
-        android:configChanges="keyboardHidden|orientation|screenSize"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar"
-        android:windowSoftInputMode="stateHidden|adjustResize" />
-    <activity
-        android:name="cn.smssdk.framework.ShareSDKUIShell"
-        android:configChanges="keyboardHidden|orientation|screenSize"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar"
-        android:windowSoftInputMode="stateHidden|adjustResize" />
-    <!--  sharesdk activity-->
-    <activity
-        android:name="cn.sharesdk.framework.ShareSDKUIShell"
-        android:configChanges="keyboardHidden|orientation|screenSize"
-        android:screenOrientation="portrait"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar"
-        android:windowSoftInputMode="stateHidden|adjustResize">
-        <intent-filter>
-            <data android:scheme="tencent100371282" />
-            <action android:name="android.intent.action.VIEW" />
+        <!--  smssdk activity-->
+        <activity
+            android:name="cn.smssdk.SMSSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="cn.smssdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!--  sharesdk activity-->
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+                <action android:name="android.intent.action.VIEW" />
 
-            <category android:name="android.intent.category.BROWSABLE" />
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
 
-    <!-- welcome section   -->
-    <activity
-        android:name=".welcome.WelcomeActivity"
-        android:label="@string/app_name"
-        android:screenOrientation="portrait">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+        <!-- welcome section   -->
+        <activity
+            android:name=".welcome.WelcomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
 
-    <!-- login section -->
-    <activity
-        android:name=".login.LoginActivity"
-        android:label="@string/app_name"
-        android:screenOrientation="portrait"
-        />
-    <!-- register section-->
-    <activity
-        android:name=".register.RegisterActivity"
-        android:label="@string/app_name"
-        android:screenOrientation="portrait"
-        />
-    <activity
-        android:name=".register.ValidateSMS"
-        android:label="@string/app_name"
-        android:screenOrientation="portrait" />
+        </activity>
+
+        <!-- login section -->
+        <activity
+            android:name=".login.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <!-- register section-->
+        <activity
+            android:name=".register.RegisterActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".register.ValidateSMS"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".map.MapActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 
