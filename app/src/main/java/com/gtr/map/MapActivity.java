@@ -3,6 +3,7 @@ package com.gtr.map;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.MapView;
 import com.gtr.R;
 
@@ -15,8 +16,9 @@ public class MapActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.map_activity);
+
         //获取地图控件引用
         mMapView = (MapView) findViewById(R.id.bmapView);
     }
